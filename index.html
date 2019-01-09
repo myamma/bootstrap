@@ -44,6 +44,10 @@
                 <div class="col-12 col-sm align-self-center">
                     <img src="img/logo.png" class="img-fluid">
                 </div>
+                <div class="col-xs-12 col-sm-2">
+                    <p style="padding:40px;"></p>
+                    <a class="btn btn-warning btn-block" href="#reservationForm">Reserve Table</a>
+                </div>
             </div>
         </div>
     </header>
@@ -57,21 +61,29 @@
                 <div class="media">
                     <img class="d-flex mr-3 img-thumbnail align-self-center" src="img/uthappizza.png" alt="uthappizza">
                     <div class="media-body">
-                        <h2 class="mt-0">Uthappizza</h2>
+                        <h2 class="mt-0">Uthappizza <span class="badge badge-danger">HOT</span> <span class="badge badge-pill badge-secondary">$4.99</span></h2>
                         <p>A unique combination of Indian Uthappam (pancake) and Italian pizza, topped with Cerignola olives, ripe vine cherry tomatoes, Vidalia onion, Guntur chillies and Buffalo Paneer.</p>
                     </div>  
                 </div>
             </div>
         </div>
 
-
         <div class = "row row-content align-items-center">
             <div class = "col-12 col-sm-4 col-md-3">
                 <h3>This Month's Promotions</h3>
             </div>
             <div class = "col col-sm col-md">
-                <h2>Weekend Grand Buffet</h2>
-                <p>Featuring mouthwatering combinations with a choice of five different salads, six enticing appetizers, six main entrees and five choicest desserts. Free flowing bubbly and soft drinks. All for just $19.99 per person </p>
+                <div class="media">
+                    <div class="media-body">
+                        <h2>Weekend Grand Buffet <span class="badge badge-danger">New</span></h2>
+                        <p>Featuring mouthwatering combinations with a choice of five different salads, six enticing appetizers, six main entrees and five choicest desserts. Free flowing bubbly and soft drinks. All for just $19.99 per person </p> 
+                    </div>
+                    <div class="media-right media-middle">
+                        <a href="#">
+                            <img class="media-object img-thumbnail" src="img/buffet.png" alt="Buffet">
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -90,6 +102,46 @@
                 </div>
             </div>
         </div>
+        
+        <div class="row row-content align-items-center justify-content-center" id="form">
+            <div class="col-12 col-sm-8">
+                <div class="card" id="reservationForm">
+                    <h3 class="card-header bg-warning text-white">Reserve a Table</h3>
+                </div>
+                <form class="form-horizontal" role="form">
+                    <div class="form-group row">
+                        <label class="col-md-2">Number of Guests</label>
+                        <div class="radio align-self-center">
+                            <label class="radio-inline"><input name="guests" type="radio" value=""> 1 </label>
+                            <label class="radio-inline"><input name="guests" type="radio" value=""> 2 </label>
+                            <label class="radio-inline"><input name="guests" type="radio" value=""> 3 </label>
+                            <label class="radio-inline"><input name="guests" type="radio" value=""> 4 </label>
+                            <label class="radio-inline"><input name="guests" type="radio" value=""> 5 </label>
+                            <label class="radio-inline"><input name="guests" type="radio" value=""> 6 </label>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-2">Date and Time</label>
+                        <div class="col-sm-3 has-feedback">
+                            <input type="text" class="form-control" id="date" placeholder="Date">
+                            <i class="glyphicon glyphicon-calendar form-control-feedback"></i>
+                        </div>
+                        <div class="col-sm-3 col-sm-push-1 has-feedback">
+                            <input type="text" class="form-control" id="time" placeholder="Time">
+                            <i class="glyphicon glyphicon-time form-control-feedback"></i>
+                        </div>
+                    </div>
+                    <div class="form-group row col-sm-10 offset-md-2">
+                        <button class="btn btn-primary" type="submit" href="#">Reserve</button>
+                    </div>
+                    <div class="col-sm-12 alert alert-warning alert-dismissible" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <p><strong>Warning:</strong> Please <a href="tel:85212345678" class="alert-link">call</a> us to reserve for more than six guests</p>
+                    </div>
+                </form>
+            </div>
+        </div>
+
     </div>
 
     <footer class ="footer">
