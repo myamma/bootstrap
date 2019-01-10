@@ -198,6 +198,9 @@
                         <a class="carousel-control-next" href="#mycarousel" role="button" data-slide="next">
                             <span class="carousel-control-next-icon"></span>
                         </a>
+                        <button class="btn btn-danger btn-sm" id="carouselButton">
+                            <span class="fa fa-pause"></span>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -252,45 +255,6 @@
                 </div>
             </div>
         </div>
-        
-        <div class="row row-content align-items-center justify-content-center" id="form">
-            <div class="col-12 col-sm-8">
-                <div class="card" id="reservationForm">
-                    <h3 class="card-header bg-warning text-white">Reserve a Table</h3>
-                </div>
-                <form class="form-horizontal" role="form">
-                    <div class="form-group row">
-                        <label class="col-md-2">Number of Guests</label>
-                        <div class="radio align-self-center">
-                            <label class="radio-inline"><input name="guests" type="radio" value=""> 1 </label>
-                            <label class="radio-inline"><input name="guests" type="radio" value=""> 2 </label>
-                            <label class="radio-inline"><input name="guests" type="radio" value=""> 3 </label>
-                            <label class="radio-inline"><input name="guests" type="radio" value=""> 4 </label>
-                            <label class="radio-inline"><input name="guests" type="radio" value=""> 5 </label>
-                            <label class="radio-inline"><input name="guests" type="radio" value=""> 6 </label>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label class="col-md-2">Date and Time</label>
-                        <div class="col-sm-3 has-feedback">
-                            <input type="text" class="form-control" id="date" placeholder="Date">
-                            <i class="glyphicon glyphicon-calendar form-control-feedback"></i>
-                        </div>
-                        <div class="col-sm-3 col-sm-push-1 has-feedback">
-                            <input type="text" class="form-control" id="time" placeholder="Time">
-                            <i class="glyphicon glyphicon-time form-control-feedback"></i>
-                        </div>
-                    </div>
-                    <div class="form-group row col-sm-10 offset-md-2">
-                        <button class="btn btn-primary" type="submit" href="#">Reserve</button>
-                    </div>
-                    <div class="col-sm-12 alert alert-warning alert-dismissible" role="alert">
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <p><strong>Warning:</strong> Please <a href="tel:85212345678" class="alert-link">call</a> us to reserve for more than six guests</p>
-                    </div>
-                </form>
-            </div>
-        </div>
 
     </div>
 
@@ -339,6 +303,23 @@
     <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#mycarousel").carousel( { interval: 2000 } );
+            $("#carouselButton").click(function(){
+            if ($("#carouselButton").children("span").hasClass('fa-pause')) {
+                $("#mycarousel").carousel('pause');
+                $("#carouselButton").children("span").removeClass('fa-pause');
+                $("#carouselButton").children("span").addClass('fa-play');
+            }
+            else if ($("#carouselButton").children("span").hasClass('fa-play')){
+                $("#mycarousel").carousel('cycle');
+                $("#carouselButton").children("span").removeClass('fa-play');
+                $("#carouselButton").children("span").addClass('fa-pause');                    
+            }
+            });     
+        });
+    </script>
 </body>
 
 </html>
